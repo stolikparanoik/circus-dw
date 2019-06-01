@@ -46,6 +46,8 @@ CREATE TABLE Activity
 	Likes BIT,
 	Comment BIT,
 	Share BIT,
+	Date date,
+	Time int,
 )
 GO
 
@@ -80,7 +82,7 @@ GO
 
 BULK
 INSERT Viewers
-FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\viewers.csv'
+FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane2\viewers.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -90,7 +92,7 @@ GO
 
 BULK
 INSERT Posts
-FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\posts.csv'
+FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane2\posts.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -100,7 +102,7 @@ GO
 
 BULK
 INSERT Events
-FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\events.csv'
+FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane2\events.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -111,7 +113,7 @@ GO
 
 BULK
 INSERT Part
-FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\parts.csv'
+FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane2\parts.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -119,11 +121,9 @@ ROWTERMINATOR = '\n'
 )
 GO
 
-select * from Part
-
 BULK
 INSERT Entertainment
-FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\entertainments.csv'
+FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane2\entertainments.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -133,7 +133,7 @@ GO
 
 BULK
 INSERT Isinto
-FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\into.csv'
+FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane2\into.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -143,101 +143,10 @@ GO
 
 BULK
 INSERT Activity
-FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\activities.csv'
+FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane2\activities.csv'
 WITH
 (
 FIELDTERMINATOR = ',',
 ROWTERMINATOR = '\n'
 )
 GO
--------------------------------------------------------
---BULK
---INSERT Viewers
---FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\viewers2.csv'
---WITH
---(
---FIELDTERMINATOR = ',',
---ROWTERMINATOR = '\n'
---)
---GO
-
---select * from Viewers
---delete from Viewers
-
---BULK
---INSERT Posts
---FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\posts2.csv'
---WITH
---(
---FIELDTERMINATOR = ',',
---ROWTERMINATOR = '\n'
---)
---GO
-
---select * from Posts
-
---BULK
---INSERT Events
---FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\events2.csv'
---WITH
---(
---FIELDTERMINATOR = ',',
---ROWTERMINATOR = '\n'
---)
---GO
-
---select * from Events
-
---BULK
---INSERT Part
---FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\parts2.csv'
---WITH
---(
---FIELDTERMINATOR = ',',
---ROWTERMINATOR = '\n'
---)
---GO
-
---select * from Part
-
---BULK
---INSERT Entertainment
---FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\entertainments2.csv'
---WITH
---(
---FIELDTERMINATOR = ',',
---ROWTERMINATOR = '\n'
---)
---GO
-
---select * from Entertainment
-
---BULK
---INSERT Isinto
---FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\into2.csv'
---WITH
---(
---FIELDTERMINATOR = ',',
---ROWTERMINATOR = '\n'
---)
---GO
-
---select * from Isinto
-
---BULK
---INSERT Activity
---FROM 'C:\Users\aaszl\Desktop\sem4\DW\dane\activities2.csv'
---WITH
---(
---FIELDTERMINATOR = ',',
---ROWTERMINATOR = '\n'
---)
---GO
-
---delete from Part
---delete from IsInto
---delete from Activity
---delete from Events
---delete from Posts
---delete from Entertainment
---delete from Viewers
